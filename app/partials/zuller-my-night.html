@@ -1,16 +1,23 @@
+<h2>
+  Zuller Controller
+</h2>
 <button class="btn" ng-click="category = 'bars'">ברים</button>
 <button class="btn" ng-click="category = 'parties'">מסיבות</button>
 
 <div ng-switch="category">
   <ul ng-switch-when="bars">
-    <li ng-repeat="bar in bars">
-      {{bar.name}}
+    <li class="bar" ng-repeat="bar in bars">
+      <img ng-src="{{bar.logo_url}}/convert?fit=clip&h=60&w=60">
+      <h3>{{bar.name}}</h3>
+      <p>{{bar.min_age}}</p>
     </li>
   </ul>
 
   <ul ng-switch-when="parties">
-    <li ng-repeat="party in parties">
-      {{party.name}}
+    <li class="party" ng-repeat="party in parties">
+      <img ng-src="{{party.logo_url}}">
+      <h3>{{party.name}}</h3>
+      <p>{{party.min_age}}</p>
     </li>
   </ul>
 </div>
