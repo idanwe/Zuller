@@ -7,7 +7,9 @@
 var host = 'http://zuller.herokuapp.com/api'
 
 angular.module('Zuller')
-  .controller('LoginCtrl', ['$scope', function($scope) {
+  .controller('ProfileCtrl', ['$scope', '$window', function($scope, $window) {
+    $scope.templateUrl = 'partials/profile.html';
+    $scope.logout = $window.logout;
   }])
   .controller('MainCtrl', ['$scope', function($scope) {
   }])
