@@ -2,7 +2,7 @@
 
 
 // Declare app level module which depends on filters, and services
-angular.module('Zuller', ['Zuller.filters', 'Zuller.directives'])
+angular.module('Zuller', [])
   .config(['$routeProvider', function($routeProvider) {
     $routeProvider
       .when('/', { templateUrl: 'views/main.html', controller: 'MainCtrl' })
