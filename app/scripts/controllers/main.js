@@ -1,5 +1,5 @@
 'use strict';
 
 angular.module('Zuller')
-    .controller('MainCtrl', ['$scope', function($scope) {
+    .controller('MainCtrl', ['$scope', 'facebookSdk', function($scope, facebookSdk) {
     }]);
