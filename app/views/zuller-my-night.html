@@ -1,23 +1,43 @@
-<h2>
-  Zuller Controller
-</h2>
-<button class="btn" ng-click="category = 'bars'">ברים</button>
-<button class="btn" ng-click="category = 'parties'">מסיבות</button>
 
-<div ng-switch="category">
+  <div class="navigation-image" ng-switch="category">
+    <a class="filter-tab filter-tab-down" ng-click="category = 'bars'"></a>
+    <a class="filter-tab filter-tab-up" ng-click="category = 'parties'"></a>
+
+    <div ng-switch-when="bars">
+      <img src="img\z-my-night\navigation-bars.png">
+    </div>
+    <div ng-switch-when="parties">
+      <img src="img\z-my-night\navigation-parties.png">
+    </div>
+</div>
+
+<div class="attractions-list" ng-switch="category">
   <ul ng-switch-when="bars">
     <li class="bar" ng-repeat="bar in bars">
-      <img ng-src="{{bar.logo_url}}/convert?fit=clip&h=60&w=60">
+      <img class="logo" ng-src="{{bar.logo_url}}/convert?fit=clip&h=45&w=45">
       <h3>{{bar.name}}</h3>
-      <p>{{bar.min_age}}</p>
+      <p>{{bar.adress}}</p>
+      <p>{{bar.distance}}</p>
     </li>
   </ul>
-
   <ul ng-switch-when="parties">
     <li class="party" ng-repeat="party in parties">
       <img ng-src="{{party.logo_url}}">
       <h3>{{party.name}}</h3>
       <p>{{party.min_age}}</p>
+      <p>{{party.entry_fee}}</p>
+      <p>{{party.min_age}}</p>
+      <p>{{party.attending}}</p>
+      <img src=""/>
     </li>
+  </ul>
+</div>
+
+<div class="attractions-sorter">
+  <span>Sort By : </span>
+  <ul>
+    <li><img src="img\z-my-night\sort_distance.png"></li>
+    <li><img src="img\z-my-night\sort_price.png"></li>
+    <li><img src="img\z-my-night\sort_ranking.png"></li>
   </ul>
 </div>
