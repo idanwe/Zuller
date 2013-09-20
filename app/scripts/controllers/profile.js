@@ -1,5 +1,5 @@
 angular.module('Zuller')
-    .controller('ProfileCtrl', ['$scope', '$window', function($scope, $window) {
+    .controller('ProfileCtrl', ['$scope', 'facebookSdk', function($scope, facebookSdk) {
         $scope.templateUrl = 'views/profile.html';
-        $scope.logout = $window.logout;
+        $scope.logout = facebookSdk.logout;
     }]);
