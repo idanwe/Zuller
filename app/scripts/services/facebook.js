@@ -12,7 +12,7 @@ angular.module('Zuller').service('facebookSdk', function (facebookAppId, $rootSc
     });
 
     var rootScope = angular.element("#ng-app").scope();
-    $rootScope.$broadcast("fb_ready")
+    rootScope.$broadcast("fb_ready");
   };
 
   (function (d) {
