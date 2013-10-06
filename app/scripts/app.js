@@ -2,7 +2,7 @@
 
 
 // Declare app level module which depends on filters, and services
-angular.module('Zuller', ['ngRoute'])
+angular.module('Zuller', ['ngRoute', 'LocalStorageModule'])
   .config(['$routeProvider', function($routeProvider) {
     $routeProvider
       .when('/', { templateUrl: 'views/main.html', controller: 'MainCtrl' })
