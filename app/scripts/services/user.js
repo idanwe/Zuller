@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('LocalStorageModule').value('prefix', 'zuller'); // TODO: figure out if this is needed
+angular.module('LocalStorageModule').value('prefix', 'zuller');
 angular.module('Zuller').service('User', ['localStorageService', function(localStorageService) {
   var self = this;
 
