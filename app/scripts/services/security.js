@@ -32,10 +32,9 @@ angular.module('Zuller').service('Security', // $state
         var deferred = $q.defer();
         console.log('3) Security:register data: ', data);
 
-        var uri = serverUrl + '/parties';
+        var uri = serverUrl + '/app_users.json';
 
-        $http({ method: 'JSONP', url: uri + '.js?callback=JSON_CALLBACK' })
-        // $http.post(uri, data)
+        $http.post(uri, data)
           .success(function (user, status) {
             console.log('4) Registered successfully');
             console.log(user);

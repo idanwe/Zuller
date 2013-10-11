@@ -1,7 +1,5 @@
 angular.module('Zuller')
-    .controller('ProfileCtrl', ['$scope', 'facebookSdk', 'Security', function($scope, facebookSdk, Security) { // TODO: add User service
-        // Security.register({ });
-        // User.setUserDetails({ id: 'the id', fb_user_id: 'fb_ user id'})
+    .controller('ProfileCtrl', ['$scope', 'facebookSdk', function($scope, facebookSdk) { // TODO: add User service
         $scope.templateUrl = 'views/profile.html';
         $scope.loggedIn = false;
         $scope.login = facebookSdk.login;

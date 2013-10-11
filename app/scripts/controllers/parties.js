@@ -6,12 +6,13 @@ angular.module('Zuller')
 
         $scope.templateUrl = 'views/parties.html';
 
+        var uri = serverUrl + '/parties.json';
+        $http.get(uri).success(function(data) {
+            $scope.parties = data;
+        });
+
         $scope.onPartyClicked = function(party) {
             sharedProperties.setCurrentParty(party);
             $location.path('parties/' + party._id);
         };
-
-        $http({ method: 'JSONP', url: serverUrl + '/parties.js?callback=JSON_CALLBACK' }).success(function(data) {
-            $scope.parties = data;
-        });
     }]);
