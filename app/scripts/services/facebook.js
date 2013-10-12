@@ -32,7 +32,6 @@ angular.module('Zuller').service('facebookSdk', function (facebookAppId, $rootSc
   $rootScope.$on("fb_ready", function () {
     FB.getLoginStatus(function (response) {
       if (response.authResponse) {
-        console.log('1) facebookSdk fb_ready broadcast response', response);
         $rootScope.$broadcast("fb_status_changed", response.status, response.authResponse.userID, response);
       } else {
         $rootScope.$broadcast("fb_status_changed", response.status, null, response);
@@ -59,7 +58,6 @@ angular.module('Zuller').service('facebookSdk', function (facebookAppId, $rootSc
       if (response.authResponse) {
         deferred.resolve(response.status);
         // connected
-        console.log('1) facebookSdk response: ', response);
         $rootScope.$broadcast("fb_status_changed", response.status, response.authResponse.userID, response);
       } else {
         deferred.reject(response.status);

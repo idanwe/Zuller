@@ -36,7 +36,6 @@ angular.module('Zuller').service('User', ['localStorageService', function(localS
   }
 
   this.clearUser = function() {
-    console.log('cleaning');
     localStorageService.remove('zuller.user');
     self.id = null;
     self.device_id = null;
