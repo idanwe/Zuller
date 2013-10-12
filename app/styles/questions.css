@@ -1,0 +1,28 @@
+#questions-container {
+  padding: 0;
+  margin: 0;
+  position: relative;
+  width: 320px;
+  height: 411px;
+  background-color: #DC6EFF;
+  font-family: 'Lato', 'Calibri', 'Arial', 'sans-serif';
+  /*background-image:url('../images/login/neon.png');*/
+}
+.question {
+  text-align: center;
+  padding: 5% 0;
+}
+
+.answers {
+  width: 100%;
+  list-style: none;
+}
+
+.answer {
+  padding: 10px;
+  text-align: center;
+}
+
+.answer:hover {
+  background-color: #FFF;
+}

@@ -1,11 +1,11 @@
 'use strict';
 
 angular.module('Zuller').service('Security', // $state
-  ['$http', '$q', 'serverUrl', 'facebookSdk', 'User',
-    function($http, $q, serverUrl, facebookSdk, User) {
+  ['$http', '$q', '$rootScope','serverUrl', 'facebookSdk', 'User',
+    function($http, $q, $rootScope, serverUrl, facebookSdk, User) {
 
       var self = this;
-      console.log('SECURITY Service');
+
       facebookSdk.$on('fb_status_changed', function(event, status, fb_user_id, response) {
         if (status == 'connected') {
           var data = {
@@ -30,15 +30,13 @@ angular.module('Zuller').service('Security', // $state
        */
       this.register = function(data) {
         var deferred = $q.defer();
-        console.log('3) Security:register data: ', data);
 
         var uri = serverUrl + '/app_users.json';
 
         $http.post(uri, data)
           .success(function (user, status) {
-            console.log('4) Registered successfully');
-            console.log(user);
             User.setUserDetails(user);
+            $rootScope.$broadcast('user_registered', user);
             deferred.resolve(user);
           }).error(function (data, status) {
             deferred.reject(data);

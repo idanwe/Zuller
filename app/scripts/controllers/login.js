@@ -1,18 +1,26 @@
 'use strict';
 
 angular.module('Zuller')
-  .controller('LoginCtrl', ['$scope','$location', 'facebookSdk',
-    function($scope, $location, facebookSdk){
-      facebookSdk.$on('fb_status_changed', function(event, status, fb_user_id, response){
-          if (status === 'connected')
-             $location.path('/question');
+  .controller('LoginCtrl', ['$scope','$location', 'Security', 'User', 'facebookSdk', '$rootScope',
+    function($scope, $location, Security, User, facebookSdk, $rootScope){
+
+      var next = function() {
+        if (User.favorite_music.length === 0) { // TODO: User.is_new
+          $location.path('/questions');
+        } else {
+          $location.path('/');
+        }
+      }
+
+      $rootScope.$on('user_registered', function(event) {
+        next();
       });
 
       $scope.continue = function(){
-          $location.path('/question');
+        next();
       }
 
       $scope.facebookLogin = function(){
-          facebookSdk.login();
+        facebookSdk.login();
       }
     }]);

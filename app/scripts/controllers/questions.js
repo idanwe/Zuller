@@ -1,9 +1,10 @@
 'use strict';
 
 angular.module('Zuller')
-    .controller('QuestionCtrl', ['$scope', '$location','$http', function($scope, $location,$http) {
+    .controller('QuestionsCtrl', ['$scope', '$location','$http', function($scope, $location,$http) {
 
         $scope.currentQuestionIdx = undefined;
+        $scope.currentQuestion = "מה השעה?";
         $scope.currentAnswers = [1,2,3];
 
         $scope.chosenMusic = [];
@@ -24,6 +25,7 @@ angular.module('Zuller')
               answers.splice(0,0, imgName);
           }
 
+          $scope.currentQuestion = currentQuestionIdx;
           switch (currentQuestionIdx){
             case 1:
               updateAnswer(imgName, chosenMusic);
