@@ -6,7 +6,8 @@ angular.module('Zuller')
 
         $scope.templateUrl = 'views/zuller-my-night.html';
 
-        $http({ method: 'JSONP', url: serverUrl + '/zuller_my_night.js?callback=JSON_CALLBACK' }).success(function(data) {
+        var uri = serverUrl + '/zuller_my_night.json';
+        $http.get(uri).success(function(data) {
 
             $scope.parties = data.parties;
             $scope.bars = data.bars;

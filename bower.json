@@ -8,7 +8,8 @@
     "es5-shim": "~2.0.8",
     "modernizr": "~2.6.2",
     "hammerjs": "~1.0.5",
-    "angular-route": "~1.2.0-rc.2"
+    "angular-route": "~1.2.0-rc.2",
+    "angular-localstorage": "*"
   },
   "devDependencies": {
     "angular-mocks": "~1.2.0-rc.2",

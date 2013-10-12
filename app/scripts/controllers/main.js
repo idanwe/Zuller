@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('Zuller')
-    .controller('MainCtrl', ['$scope', '$rootScope', function($scope, $rootScope) {
+    .controller('MainCtrl', ['$scope', '$rootScope', 'Security', function($scope, $rootScope, Security) {
       $scope.viewLoaded = [];
       $rootScope.$on('$includeContentLoaded', function(event){
         $scope.viewLoaded.push(event.targetScope.name);
