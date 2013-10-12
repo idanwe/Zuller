@@ -1,9 +1,10 @@
-<div data-facebook='501160893291995'>
-  <div>
-      <img src="..\images\login\background.jpg" width="300" height="400">
-      <div>
-          <button ng-click="facebookLogin()">Login with Facebook</button>
-          <button ng-Click="continue()">Continue without login</button>
-      </div>
+<div id="login-container">
+  <div class="center logo-container">
+    <img src="../images/logo.png" alt="">
+  </div>
+  <div class="center login-buttons">
+    <button class="button fb-touch-button" ng-click="facebookLogin()">Login with Facebook</button>
+
+    <button class="button continue-touch-button" ng-Click="continue()">or continue without Facebook</button>
   </div>
 </div>

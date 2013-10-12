@@ -1,0 +1,69 @@
+#login-container {
+  padding: 0;
+  margin: 0;
+  position: relative;
+  width: 320px;
+  height: 411px;
+  background-image:url('../images/login/neon.png');
+}
+
+.button {
+  display: block;
+  border: none;
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+
+  font-size: 13px;
+  margin: 10px 0 20px;
+  padding: 0 20px;
+
+  cursor: pointer;
+  font-family: 'Lato', 'Calibri', 'Arial', 'sans-serif';
+  letter-spacing: 1px;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.center {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+
+.logo-container {
+  top: 4%;
+  z-index: 9999999;
+}
+
+.login-buttons {
+  top: 44%%;
+  z-index: 9999999;
+  width: 300px;
+}
+
+.fb-touch-button {
+  text-transform: uppercase;
+  background: #3A5BC4;
+  color: #FFF;
+}
+
+.continue-touch-button {
+  width: 83%;
+  height: 30px;
+  line-height: 30px;
+
+  font-size: 12px;
+  margin: auto;
+
+  text-transform: none;
+  background: #FFF;
+  color: #AAA;
+}
