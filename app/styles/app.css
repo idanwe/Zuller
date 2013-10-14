@@ -1,5 +1,13 @@
 html, body {
 }
+.phone {
+  padding: 0;
+  margin: 0;
+  position: relative;
+  width: 320px;
+  height: 411px;
+  font-family: 'Lato', 'Calibri', 'Arial', 'sans-serif';
+}
 
 #vertical-carousel, #vertical-carousel > ul, #vertical-carousel > ul > li {
   /*height: 100%;*/

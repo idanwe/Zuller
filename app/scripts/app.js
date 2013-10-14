@@ -8,8 +8,8 @@ angular.module('Zuller', ['ngRoute', 'LocalStorageModule'])
       .when('/', { templateUrl: 'views/main.html', controller: 'MainCtrl' })
       .when('/questions', { templateUrl: 'views/questions.html', controller: 'QuestionsCtrl'})
       .when('/login', { templateUrl: 'views/login.html', controller: 'LoginCtrl' })
-      .when('/bars/:barId',{ templateUrl: 'views/detailed-bar.html', controller: 'DetailedBarCtrl'})
-      .when('/parties/:partyId',{ templateUrl: 'views/detailed-party.html', controller: 'DetailedPartyCtrl'})
+      .when('/bars/:barId',{ templateUrl: 'views/bar.html', controller: 'BarCtrl'})
+      .when('/parties/:partyId',{ templateUrl: 'views/party.html', controller: 'PartyCtrl'})
 	  .otherwise({ redirectTo: '/'});
   }]);
 
