@@ -4,20 +4,18 @@ angular.module('Zuller')
   .controller('LoginCtrl', ['$scope','$location', 'Security', 'User', 'facebookSdk', '$rootScope',
     function($scope, $location, Security, User, facebookSdk, $rootScope){
 
-      var next = function() {
-        if (User.favorite_music.length === 0) { // TODO: User.is_new
+      var next = function(event, is_new_user, user) {
+        if (is_new_user) {
           $location.path('/questions');
         } else {
           $location.path('/');
         }
       }
 
-      $rootScope.$on('user_registered', function(event) {
-        next();
-      });
+      $rootScope.$on('user_registered', next);
 
       $scope.continue = function(){
-        next();
+        Security.register(User.getDeviceId())
       }
 
       $scope.facebookLogin = function(){

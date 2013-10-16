@@ -74,6 +74,10 @@ angular.module('Zuller').service('User', ['localStorageService', function(localS
     return false;
   }
 
+  this.getDeviceId = function() {
+
+  }
+
   this.addAlert = function(type, msg, title) {
     this.alerts.push({type: type, msg: msg, title: title});
   }

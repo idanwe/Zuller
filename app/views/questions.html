@@ -1,8 +1,15 @@
-<div id="questions-container">
-  <div class="question">{{currentQuestion}}</div>
+<div id="questions-container" class="background-{{currentQuestion.key}}">
+  <div class="question">{{currentQuestion.text}}</div>
+
   <ul class="answers">
-    <li class="answer" ng-repeat="answer in currentAnswers" ng-click="onAnswerClicked">
-      <a>TOTAH {{answer}}</a>
+    <li class="answer chosen-{{answer.chosen}}" ng-repeat="answer in currentAnswers" ng-click="onAnswerClicked(answer)">
+      <a>{{answer.text}}</a>
+
     </li>
   </ul>
+
+  <div class="nav-bar">
+    <button class="button back-touch-button" ng-click="back()">back</button>
+    <button class="button next-touch-button" ng-click="next()">next</button>
+  </div>
 </div>

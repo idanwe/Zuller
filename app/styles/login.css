@@ -10,7 +10,6 @@
 .button {
   display: block;
   border: none;
-  width: 100%;
   height: 50px;
   line-height: 50px;
 
@@ -51,6 +50,7 @@
 
 .fb-touch-button {
   text-transform: uppercase;
+  width: 100%;
   background: #3A5BC4;
   color: #FFF;
 }

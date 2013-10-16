@@ -4,13 +4,29 @@
   position: relative;
   width: 320px;
   height: 411px;
-  background-color: #DC6EFF;
   font-family: 'Lato', 'Calibri', 'Arial', 'sans-serif';
-  /*background-image:url('../images/login/neon.png');*/
 }
+
+.background-beverage {
+  background-image: url('../images/beverage.jpg');
+}
+
+.background-music {
+  background-image: url('../images/music.jpg');
+}
+.background-area {
+  background-image: url('../images/area.jpg');
+}
+
 .question {
   text-align: center;
   padding: 5% 0;
+  color: #FFF;
+  font-size: 20px;
+  direction:rtl;
+
+  border-bottom: 5px solid #FFF;
+  border-top: 5px solid #FFF;
 }
 
 .answers {
@@ -19,10 +35,59 @@
 }
 
 .answer {
+  position: relative;
+  margin-bottom: 4px;
   padding: 10px;
+
+  color: #FFF;
+  background: rgba(49, 24, 24, 0.19);
+
+  text-align: center;
+  font-size: 30px;
+  height: 37px;
+}
+
+.answer:first-child {
+  margin-top: 4px;
+}
+
+.chosen-true {
+  background-color: rgba(0, 255, 20, 0.21);
+}
+
+.nav-bar {
+  position: absolute;
+  bottom: 0;
+  height: 40px;
+  width: 100%;
+
+  background-color: #FFF;
+
   text-align: center;
 }
 
-.answer:hover {
+.next-touch-button {
+  height: 40px;
+  line-height: 40px;
+  margin: 0;
+  float: right;
+
+  text-transform: uppercase;
+  text-align: right;
+
   background-color: #FFF;
+  color: #000;
+}
+
+.back-touch-button {
+  height: 40px;
+  line-height: 40px;
+  margin: 0;
+  float: left;
+
+  text-transform: uppercase;
+  text-align: left;
+
+  background-color: #FFF;
+  color: #000;
 }

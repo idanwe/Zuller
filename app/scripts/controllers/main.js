@@ -12,5 +12,4 @@ angular.module('Zuller')
           horizontalCarousel.init();
         }
       })
-
     }]);

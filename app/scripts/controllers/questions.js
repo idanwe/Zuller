@@ -1,39 +1,75 @@
 'use strict';
 
 angular.module('Zuller')
-    .controller('QuestionsCtrl', ['$scope', '$location','$http', function($scope, $location,$http) {
+    .controller('QuestionsCtrl', ['$scope', '$location','$http', '$rootScope', 'User', 'Security', function($scope, $location, $http, $rootScope, User, Security) {
+        var answers = {
+          beverage: ['וודקה', 'עראק', 'ויסקי', 'בירה', 'יין'],
+          music: ['רוק', 'אינדי', 'ישראלית', 'אלטרנטיבי', 'פופ'],
+          area: ['תל אביב', 'הרצליה', 'ירושלים', 'אשקלות']
+        };
 
-        $scope.currentQuestionIdx = undefined;
-        $scope.currentQuestion = "מה השעה?";
-        $scope.currentAnswers = [1,2,3];
+        function composeAnswers(q) {
+          var aws = answers[q];
+          var answersObj = []
+          for (var i in aws) {
+            answersObj.push({ chosen: false, text: aws[i] });
+          }
+          return answersObj;
+        };
 
-        $scope.chosenMusic = [];
-        $scope.chosenAreas = [];
-        $scope.chosenDrink = [];
-
-
-        $scope.onFinish = function(){
-          //Create request to http to update server
+        function getChosenQuestions(key) {
+          var chosens = [];
+          for (var i in $scope.currentAnswers) {
+            var answer = $scope.currentAnswers[i]
+            if (answer.chosen) chosens.push(answer.text);
+          }
+          return chosens;
         }
 
-        $scope.onAnswerClicked = function(imgName){
+        $rootScope.$on('user_updated', function(event){
+          $location.path('/');
+        });
 
-          function updateAnswer(imgName, answers){
-            if (imgName in answers)
-              answers.splice(answers.indexOf(imgName), 1);
-            else
-              answers.splice(0,0, imgName);
-          }
+        var questionsToAsk = [
+          { key: 'beverage', text: 'מה אתה אוהב לשתות?'},
+          { key: 'music', text: 'איזה סוגי מוזיקה אתה שומע?'},
+          { key: 'area', text: 'באיזה אזור אתה מבלה?'}
+        ];
 
-          $scope.currentQuestion = currentQuestionIdx;
-          switch (currentQuestionIdx){
-            case 1:
-              updateAnswer(imgName, chosenMusic);
-            case 2:
-              updateAnswer(imgName, chosenAreas);
-            case 3:
-              updateAnswer(imgName, chosenDrink);
+        $scope.currentQuestionId = 0;
+        $scope.currentQuestion = questionsToAsk[$scope.currentQuestionId];
+        $scope.currentAnswers = composeAnswers($scope.currentQuestion.key);
+
+        var chosenAnswers = {};
+
+        $scope.onAnswerClicked = function(answer){
+          answer.chosen = !answer.chosen;
+        }
+
+        $scope.next = function() {
+          chosenAnswers[$scope.currentQuestion.key] = getChosenQuestions();
+          if (++$scope.currentQuestionId === questionsToAsk.length) {
+            var data = {
+              // TODO: device_id
+              fb_user_id: User.fb_user_id,
+              favorite_beverage: chosenAnswers.beverage,
+              favorite_music: chosenAnswers.music,
+              area: chosenAnswers.area
+            };
+            Security.update(data);
+          } else {
+            var nextQ = questionsToAsk[$scope.currentQuestionId];
+            $scope.currentQuestion = nextQ;
+            $scope.currentAnswers = composeAnswers(nextQ.key);
           }
-          //add or remove from chosen array for the specified question
+        }
+
+        $scope.back = function() {
+          chosenAnswers[$scope.currentQuestion.key] = getChosenQuestions();
+          if (--$scope.currentQuestionId >= 0) {
+            var lastQ = questionsToAsk[$scope.currentQuestionId];
+            $scope.currentQuestion = lastQ;
+            $scope.currentAnswers = chosenAnswers[lastQ.key];
+          }
         }
     }]);

@@ -36,7 +36,25 @@ angular.module('Zuller').service('Security', // $state
         $http.post(uri, data)
           .success(function (user, status) {
             User.setUserDetails(user);
-            $rootScope.$broadcast('user_registered', user);
+            $rootScope.$broadcast('user_registered', user.is_new, user);
+            deferred.resolve(user);
+          }).error(function (data, status) {
+            deferred.reject(data);
+          });
+
+        return deferred.promise;
+      }
+
+      this.update = function(data) {
+        var deferred = $q.defer();
+        data.fb_user_id = User.fb_user_id
+        // data.device_id = User.device_id TODO: device_id
+        var uri = serverUrl + '/app_users.json';
+
+        $http.post(uri, data)
+          .success(function (user, status) {
+            User.setUserDetails(user);
+            $rootScope.$broadcast('user_updated', user.is_new, user);
             deferred.resolve(user);
           }).error(function (data, status) {
             deferred.reject(data);
