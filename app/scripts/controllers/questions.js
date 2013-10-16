@@ -2,10 +2,16 @@
 
 angular.module('Zuller')
     .controller('QuestionsCtrl', ['$scope', '$location','$http', '$rootScope', 'User', 'Security', function($scope, $location, $http, $rootScope, User, Security) {
+        // var answers = {
+        //   beverage: ['וודקה', 'עראק', 'ויסקי', 'בירה', 'יין'],
+        //   music: ['רוק', 'אינדי', 'ישראלית', 'אלטרנטיבי', 'פופ'],
+        //   area: ['תל אביב', 'הרצליה', 'ירושלים', 'אשקלות']
+        // };
+
         var answers = {
-          beverage: ['וודקה', 'עראק', 'ויסקי', 'בירה', 'יין'],
-          music: ['רוק', 'אינדי', 'ישראלית', 'אלטרנטיבי', 'פופ'],
-          area: ['תל אביב', 'הרצליה', 'ירושלים', 'אשקלות']
+          beverage: ['vodka', 'arak', 'wiskey', 'beer', 'wine'],
+          music: ['rock', 'indie', 'isreali', 'alternative', 'pop'],
+          area: ['tel aviv', 'herzelia', 'jerusalem', 'ashkelon']
         };
 
         function composeAnswers(q) {
@@ -30,10 +36,15 @@ angular.module('Zuller')
           $location.path('/');
         });
 
+        // var questionsToAsk = [
+        //   { key: 'beverage', text: 'מה אתה אוהב לשתות?'},
+        //   { key: 'music', text: 'איזה סוגי מוזיקה אתה שומע?'},
+        //   { key: 'area', text: 'באיזה אזור אתה מבלה?'}
+        // ];
         var questionsToAsk = [
-          { key: 'beverage', text: 'מה אתה אוהב לשתות?'},
-          { key: 'music', text: 'איזה סוגי מוזיקה אתה שומע?'},
-          { key: 'area', text: 'באיזה אזור אתה מבלה?'}
+          { key: 'beverage', text: 'what do you like drink?'},
+          { key: 'music', text: 'what is your music favorites?'},
+          { key: 'area', text: 'your area?'}
         ];
 
         $scope.currentQuestionId = 0;
@@ -61,15 +72,6 @@ angular.module('Zuller')
             var nextQ = questionsToAsk[$scope.currentQuestionId];
             $scope.currentQuestion = nextQ;
             $scope.currentAnswers = composeAnswers(nextQ.key);
-          }
-        }
-
-        $scope.back = function() {
-          chosenAnswers[$scope.currentQuestion.key] = getChosenQuestions();
-          if (--$scope.currentQuestionId >= 0) {
-            var lastQ = questionsToAsk[$scope.currentQuestionId];
-            $scope.currentQuestion = lastQ;
-            $scope.currentAnswers = chosenAnswers[lastQ.key];
           }
         }
     }]);

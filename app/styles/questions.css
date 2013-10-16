@@ -4,7 +4,7 @@
   position: relative;
   width: 320px;
   height: 411px;
-  font-family: 'Lato', 'Calibri', 'Arial', 'sans-serif';
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 }
 
 .background-beverage {
@@ -14,6 +14,7 @@
 .background-music {
   background-image: url('../images/music.jpg');
 }
+
 .background-area {
   background-image: url('../images/area.jpg');
 }
@@ -23,10 +24,6 @@
   padding: 5% 0;
   color: #FFF;
   font-size: 20px;
-  direction:rtl;
-
-  border-bottom: 5px solid #FFF;
-  border-top: 5px solid #FFF;
 }
 
 .answers {
@@ -39,12 +36,13 @@
   margin-bottom: 4px;
   padding: 10px;
 
+  height: 20px;
+
+  background: rgba(230, 230, 230, 0.19);
   color: #FFF;
-  background: rgba(49, 24, 24, 0.19);
 
   text-align: center;
-  font-size: 30px;
-  height: 37px;
+  font-size: 20px;
 }
 
 .answer:first-child {
@@ -74,19 +72,6 @@
 
   text-transform: uppercase;
   text-align: right;
-
-  background-color: #FFF;
-  color: #000;
-}
-
-.back-touch-button {
-  height: 40px;
-  line-height: 40px;
-  margin: 0;
-  float: left;
-
-  text-transform: uppercase;
-  text-align: left;
 
   background-color: #FFF;
   color: #000;

@@ -4,12 +4,10 @@
   <ul class="answers">
     <li class="answer chosen-{{answer.chosen}}" ng-repeat="answer in currentAnswers" ng-click="onAnswerClicked(answer)">
       <a>{{answer.text}}</a>
-
     </li>
   </ul>
 
   <div class="nav-bar">
-    <button class="button back-touch-button" ng-click="back()">back</button>
     <button class="button next-touch-button" ng-click="next()">next</button>
   </div>
 </div>
