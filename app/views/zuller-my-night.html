@@ -1,8 +1,8 @@
   <!-- Refactor {{bar}} and {{party}} in ngClick -->
 
 <div class="navigation-image" ng-switch="category">
-  <a class="filter-tab filter-tab-down" ng-click="category = 'bars'"></a>
-  <a class="filter-tab filter-tab-up" ng-click="category = 'parties'"></a>
+  <a class="filter-tab filter-tab-bars" ng-click="category='bars'"></a>
+  <a class="filter-tab filter-tab-parties" ng-click="category='parties'"></a>
 
   <div ng-switch-when="bars">
     <img src="images\z-my-night\navigation-bars.png">
@@ -36,11 +36,11 @@
   </ul>
 </div>
 
-<div class="attractions-sorter">
+<!-- <div class="attractions-sorter">
   <span>Sort By : </span>
   <ul>
     <li><img src="images\z-my-night\sort_distance.png"></li>
     <li><img src="images\z-my-night\sort_price.png"></li>
     <li><img src="images\z-my-night\sort_ranking.png"></li>
   </ul>
-</div>
+</div> -->

@@ -1,40 +1,23 @@
-
-#z-my-night-ctrl h2 {
-  color: red;
-}
-
- * {margin: 0; padding: 0;}
-
-
 .navigation-image {
-  width: 320;
   margin-left: 3%;
-}
-
-.navigation-bar {
-   margin-bottom: 8px;
-   margin-top: 10px;
-   width: 320px;
 }
 
 .filter-tab {
   width: 42%;
-  height: 4%;
+  height: 27px;
+
+  position: absolute;
+  top: -1px;
 }
 
-.filter-tab-up {
-  position: absolute;
+.filter-tab-parties {
   /*border: 1px solid pink;*/
-  top: 24px;
-  width: 48%;
-  right: 0;
+  right: 10px;
 }
 
-.filter-tab-down {
-  position: absolute;
+.filter-tab-bars {
   /*border: 1px solid pink;*/
-  top: 24px;
-  left: 0;
+  left: 10px;
 }
 
 .attractions-list {
@@ -45,6 +28,7 @@
 .attractions-list ul {
   position: relative;
   left: -8%;
+  padding: 0;
 }
 
 .attractions-list ul li  {
@@ -60,23 +44,20 @@
   cursor: pointer;
 }
 
-
 .attractions-list h3 {
   font: bold 20px/1.5 Helvetica, Verdana, sans-serif;
   float: right;
   position: relative;
   bottom: 18px;
   right: 10px;
-  /*float: sright;*/
 }
 
 .attractions-list li p {
   font: 200 12px/1.5 Georgia, Times New Roman, serif;
 }
 
-
 .bar {
-  }
+ }
 
 .party {
 }
@@ -90,7 +71,7 @@
   float: left;
 }
 
-.attractions-sorter {
+/*.attractions-sorter {
   position: absolute;
   bottom: 0.5%;
   left:20%;
@@ -112,4 +93,4 @@
 .attractions-sorter ul li {
   display: inline-block;
   width: 60px;
-}
+}*/
