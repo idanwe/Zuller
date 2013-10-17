@@ -9,14 +9,17 @@
 
 .background-beverage {
   background-image: url('../images/beverage.jpg');
+  background-color: #7BFF9B;
 }
 
 .background-music {
   background-image: url('../images/music.jpg');
+  background-color: #FF7BE5;
 }
 
 .background-area {
   background-image: url('../images/area.jpg');
+  background-color: #FFA57B;
 }
 
 .question {
@@ -29,6 +32,7 @@
 .answers {
   width: 100%;
   list-style: none;
+  padding: 0;
 }
 
 .answer {
