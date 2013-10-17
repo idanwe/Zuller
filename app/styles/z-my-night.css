@@ -1,13 +1,13 @@
-.navigation-image {
+.navigation-tabs {
   margin-left: 3%;
 }
 
 .filter-tab {
-  width: 42%;
-  height: 27px;
-
   position: absolute;
   top: -1px;
+
+  width: 42%;
+  height: 27px;
 }
 
 .filter-tab-parties {
@@ -29,46 +29,48 @@
   position: relative;
   left: -8%;
   padding: 0;
+  list-style: none;
 }
 
 .attractions-list ul li  {
-  margin: 5px;
+  margin: 2%;
   width: 250px;
   height: 55px;
-  overflow: auto;
   background-color: rgba(30,144,225,0.3);
 
+  position: relative;
+  font-family: Helvetica, Verdana, sans-serif;
 }
+
 .attractions-list ul li:hover{
   background: #eee;
   cursor: pointer;
 }
 
-.attractions-list h3 {
-  font: bold 20px/1.5 Helvetica, Verdana, sans-serif;
-  float: right;
-  position: relative;
-  bottom: 18px;
-  right: 10px;
-}
+.attr-logo {
+  position: absolute;
+  top: 9%;
+  left: 3%;
 
-.attractions-list li p {
-  font: 200 12px/1.5 Georgia, Times New Roman, serif;
-}
-
-.bar {
- }
-
-.party {
-}
-
-.logo {
   border-radius: 10px;
   box-shadow: 0 0 12px rgba(0,0,0,0.8);
-  position: relative;
-  top: -14px;
-  left: 8px;
-  float: left;
+}
+
+.attr-name {
+  position: absolute;
+  top: 10%;
+  right: 4%;
+
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.attr-address {
+  position: absolute;
+  bottom: 10%;
+  right: 4%;
+
+  font-size: 13px;
 }
 
 /*.attractions-sorter {

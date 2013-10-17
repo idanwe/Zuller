@@ -1,5 +1,6 @@
 html, body {
-  background-color: black;
+  background-color: #FF4545;
+  margin: 0;
 }
 .phone {
   padding: 0;
@@ -32,7 +33,7 @@ html, body {
 #bg-carousel {
   min-height: 100%;
   height: 100%;
-  background-image: url(../images/bg72.png);
+  background-image: url(../images/main/bg72.png);
   position: absolute;
   top: 0;
   left: -120px;
@@ -129,23 +130,23 @@ html, body {
 }
 
 li.left-pane {
-  background-image: url(../images/left-pane.png);
+  background-image: url(../images/main/left-pane.png);
   height: 411px;
 }
 li.right-pane {
-  background-image: url(../images/right-pane.png);
+  background-image: url(../images/main/right-pane.png);
   height: 411px;
 }
 li.top-pane {
   background-color: rgb(2,0,26);
-  background-image: url(../images/top-pane.png);
+  background-image: url(../images/main/top-pane.png);
   height: 411px;
 }
 li.center-pane {
-  background-image: url(../images/center-pane.png);
+  background-image: url(../images/main/center-pane.png);
   height: 411px;
 }
 li.bottom-pane {
-  background-image: url(../images/bg-bottom-72.png);
+  background-image: url(../images/main/bg-bottom-72.png);
   height: 411px;
 }

@@ -1,6 +1,6 @@
   <!-- Refactor {{bar}} and {{party}} in ngClick -->
 
-<div class="navigation-image" ng-switch="category">
+<div class="navigation-tabs" ng-switch="category">
   <a class="filter-tab filter-tab-bars" ng-click="category='bars'"></a>
   <a class="filter-tab filter-tab-parties" ng-click="category='parties'"></a>
 
@@ -16,21 +16,21 @@
 <div class="attractions-list" ng-switch="category">
   <ul ng-switch-when="bars">
     <li class="bar" ng-repeat="bar in bars" ng-click="onBarClicked({{bar}})">
-      <img class="logo" ng-src="{{bar.logo_url}}/convert?fit=clip&h=45&w=45">
-      <h3>{{bar.name}}</h3>
-      <p>{{bar.adress}}</p>
-      <p>{{bar.distance}}</p>
+      <img class="attr-logo" ng-src="{{bar.logo_url}}/convert?fit=clip&h=45&w=45">
+      <span class="attr-name">{{bar.name}}</span>
+      <span class="attr-address">{{bar.address}}</span>
+      <span>{{bar.distance}}</span>
     </li>
   </ul>
   <ul ng-switch-when="parties">
 
     <li class="party" ng-repeat="party in parties" ng-click="onPartyClicked({{party}})">
-      <img ng-src="{{party.logo_url}}">
-      <h3>{{party.name}}</h3>
-      <p>{{party.min_age}}</p>
-      <p>{{party.entry_fee}}</p>
-      <p>{{party.min_age}}</p>
-      <p>{{party.attending}}</p>
+      <img class="attr-logo" ng-src="{{party.logo_url}}/convert?fit=clip&h=45&w=45">
+      <span class="attr-name">{{party.name}}</span>
+      <span>{{party.min_age}}</span>
+      <span>{{party.entry_fee}}</span>
+      <span>{{party.min_age}}</span>
+      <span>{{party.attending}}</span>
       <img src=""/>
     </li>
   </ul>

@@ -8,17 +8,19 @@
 }
 
 .background-beverage {
-  background-image: url('../images/beverage.jpg');
+  background-image: url('../images/questions/beverage.jpg');
   background-color: #7BFF9B;
 }
 
 .background-music {
-  background-image: url('../images/music.jpg');
+  background-image: url('../images/questions/music.jpg');
   background-color: #FF7BE5;
+  background-size: cover;
+  background-position-y: 40%;
 }
 
 .background-area {
-  background-image: url('../images/area.jpg');
+  background-image: url('../images/questions/area.jpg');
   background-color: #FFA57B;
 }
 
