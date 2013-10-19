@@ -1,10 +1,10 @@
 'use strict';
 
 angular.module('Zuller')
-    .controller('PartiesCtrl', ['$scope', '$http', '$location', 'sharedProperties', 'serverUrl',
+    .controller('EventsCtrl', ['$scope', '$http', '$location', 'sharedProperties', 'serverUrl',
         function($scope, $http, $location, sharedProperties, serverUrl) {
 
-        $scope.templateUrl = 'views/parties.html';
+        $scope.templateUrl = 'views/events.html';
 
         var uri = serverUrl + '/parties.json';
         $http.get(uri).success(function(data) {

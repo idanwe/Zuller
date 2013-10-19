@@ -1,0 +1,14 @@
+<div class="title">events</div>
+
+<div class="parties-list">
+  <ul>
+    <li class="attraction party" ng-repeat="party in parties" ng-click="onPartyClicked({{party}})">
+        <img class="attr-logo" ng-src="{{party.logo_url}}/convert?fit=clip&h=45&w=45">
+        <span class="attr-name">{{party.name}}</span>
+        <span class="attr-address">{{party.address}}</span>
+        <span class="attr-min-age">{{party.min_age}}+</span>
+        <span class="attr-entry-fee">{{party.entry_fee}}</span>
+        <!-- <span class="attr-attending">{{party.attending}}</span> -->
+      </li>
+  </ul>
+</div>
