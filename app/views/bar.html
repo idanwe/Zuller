@@ -11,18 +11,18 @@
  </div>
     <div class="icon-image-container">
         <img class="icon-image" ng-src={{bar.logo_url}}>
+        <span class="min-age">{{bar.min_age}}+</span>
     </div>
     <div class="information-container">
-        <span class="name">name</span>
-        <span class="address">adress</span>
-        <span class="min-age">minage</span>
-        <span class="number">number</span>
+        <span class="name">{{bar.name}}</span>
+        <span class="address">{{bar.address}}</span>
+        <!--<span class="number">number</span>-->
     </div>
-    <div class="music-container">
-        <span class="music">Rock</span>
-    </div>
-    <div class="description-container">
-        <p class="description">texttext</p>
+    <div class="extra-info-container">
+       <span class="music">Rock</span>
+       <div class="description-container">
+          <p class="description">texttext</p>
+       </div>
     </div>
     <div class="menu-container">
         <img class="menu" ng-src={{bar.menu}}>>

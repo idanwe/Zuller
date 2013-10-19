@@ -5,37 +5,83 @@
    background-color: #000000;
    height: 100%;
    color: white;
+   font-family: Helvetica, Verdana, sans-serif;
 }
 .background-logo-container{
+    height: 21%;
+    width: 100%;
 }
 .background-image{
-
+    height: 100%;
+    width: 100%;
 }
 
 .icon-image-container{
-
+    position: absolute;
+    height: 25%;
+    width: 40%;
+    left: 3%;
+    top: 12%;
 }
 .icon-image{
+    height: 100%;
+    width: 100%;
+    border: 2px solid black;
+}
 
+.min-age{
+    position: absolute;
+    top: 80%;
+    left: 5%;
+    font-size: 18px;
+    font-weight: bold;
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
 }
 
 .information-container{
+    position: absolute;
+    top: 25%;
+    right: 4%;
+    width: 60%;
+    height: 50%;
 
 }
 .name{
-
+    position: absolute;
+    right: 0%;
+    top: 0%;
+    text-align: right;
+    font-size: 25px;
+    font-weight: bold;
 }
 .address{
-
+    position: absolute;
+    top: 17%;
+    right: 0%;
+    text-align: right;
+    font-size: 14px;
+    font-weight: bold;
  }
-.min-age{
 
+.extra-info-container{
+   position: absolute;
+   height: 30%;
+   width: 100%;
+   top: 40%;
 }
 .music{
-
+    position: absolute;
+    top: 10%;
+    left: 5%;
+    font-size: 15px;
+    font-weight: bold;
 }
 .description-container{
-
+    position: absolute;
+    top: 15%;
+    right: 5%;
+    font-size: 12px;
+    font-weight: bold;
 }
 .description{
 
