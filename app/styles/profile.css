@@ -1,0 +1,11 @@
+.profile-picture {
+  position: absolute;
+  top: 12%;
+  left: 42%;
+}
+
+.user-name {
+  position: absolute;
+  top: 26%;
+  left: 37%;
+}

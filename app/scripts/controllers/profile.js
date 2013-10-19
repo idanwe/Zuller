@@ -6,5 +6,11 @@ angular.module('Zuller')
         $scope.logout = facebookSdk.logout;
         facebookSdk.$on('fb_status_changed', function(event, status, fb_user_id, response) {
           $scope.loggedIn = status == "connected";
+          var promise = facebookSdk.getUser()
+          promise.then(function(res) {
+            var img_url = "http://graph.facebook.com/"+res.id+"/picture";
+            res.img_url = img_url;
+            $scope.user = res;
+          });
         })
     }]);
