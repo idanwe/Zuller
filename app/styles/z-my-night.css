@@ -72,6 +72,12 @@
 
   font-size: 13px;
 }
+.attr-min-age {
+    position: absolute;
+    bottom: 10%;
+    left: 8%;
+    font-size: 13px;
+}
 
 /*.attractions-sorter {
   position: absolute;
