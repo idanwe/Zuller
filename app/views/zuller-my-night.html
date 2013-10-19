@@ -15,24 +15,22 @@
 
 <div class="attractions-list" ng-switch="category">
   <ul ng-switch-when="bars">
-    <li class="bar" ng-repeat="bar in bars" ng-click="onBarClicked({{bar}})">
+    <li class="attraction bar" ng-repeat="bar in bars" ng-click="onBarClicked({{bar}})">
       <img class="attr-logo" ng-src="{{bar.logo_url}}/convert?fit=clip&h=45&w=45">
       <span class="attr-name">{{bar.name}}</span>
       <span class="attr-address">{{bar.address}}</span>
-      <span>{{bar.distance}}</span>
+      <span class="attr-distance">{{bar.distance}}</span>
     </li>
   </ul>
   <ul ng-switch-when="parties">
 
-    <li class="party" ng-repeat="party in parties" ng-click="onPartyClicked({{party}})">
+    <li class="attraction party" ng-repeat="party in parties" ng-click="onPartyClicked({{party}})">
       <img class="attr-logo" ng-src="{{party.logo_url}}/convert?fit=clip&h=45&w=45">
       <span class="attr-name">{{party.name}}</span>
       <span class="attr-address">{{party.address}}</span>
       <span class="attr-min-age">{{party.min_age}}+</span>
       <span class="attr-entry-fee">{{party.entry_fee}}</span>
-      <!--<span>{{party.min_age}}</span>-->
-      <!--<span>{{party.min_age}}</span>-->
-      <!--<span>{{party.attending}}</span>-->
+      <!-- <span class="attr-attending">{{party.attending}}</span> -->
     </li>
   </ul>
 </div>
