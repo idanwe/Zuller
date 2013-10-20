@@ -13,9 +13,9 @@ angular.module('Zuller').service('User', ['localStorageService', function(localS
   self.fb_user_name = null;
 
   self.age = null;
-  self.area = null;
-  self.favorite_beverage = null;
-  self.favorite_music = null;
+  self.area = [];
+  self.favorite_beverage = [];
+  self.favorite_music = [];
 
   this.alerts = [];
 
