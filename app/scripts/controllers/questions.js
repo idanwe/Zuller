@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('Zuller')
-    .controller('QuestionsCtrl', ['$scope', '$location','$http', '$rootScope', 'User', 'Security', function($scope, $location, $http, $rootScope, User, Security) {
+    .controller('QuestionsCtrl', ['$scope', '$location','$http', 'User', 'Security', function($scope, $location, $http, User, Security) {
         // var answers = {
         //   beverage: ['וודקה', 'עראק', 'ויסקי', 'בירה', 'יין'],
         //   music: ['רוק', 'אינדי', 'ישראלית', 'אלטרנטיבי', 'פופ'],
@@ -31,10 +31,6 @@ angular.module('Zuller')
           }
           return chosens;
         }
-
-        $rootScope.$on('user_updated', function(event){
-          $location.path('/');
-        });
 
         // var questionsToAsk = [
         //   { key: 'beverage', text: 'מה אתה אוהב לשתות?'},
@@ -67,7 +63,9 @@ angular.module('Zuller')
               favorite_music: chosenAnswers.music,
               area: chosenAnswers.area
             };
-            Security.update(data);
+            Security.update(data).then(function(res) {
+              $location.path('/');
+            });
           } else {
             var nextQ = questionsToAsk[$scope.currentQuestionId];
             $scope.currentQuestion = nextQ;

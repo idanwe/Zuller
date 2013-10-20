@@ -54,7 +54,6 @@ angular.module('Zuller').service('Security', // $state
         $http.post(uri, data)
           .success(function (user, status) {
             User.setUserDetails(user);
-            $rootScope.$broadcast('user_updated', user.is_new, user);
             deferred.resolve(user);
           }).error(function (data, status) {
             deferred.reject(data);
