@@ -1,4 +1,19 @@
-<a href="" ng-click="login()" ng-show="!loggedIn">Login</a>
-<a href="" ng-click="logout()" ng-show="loggedIn">Logout</a>
-<span class="user-name">{{user.name}}</span>
-<img class="profile-picture" src="{{user.img_url}}" alt="">
+<div class="profile-container">
+  <button class="button fb-touch-button" href="" ng-click="login()" ng-show="!loggedIn">Login</button>
+  <a class="fb-logout" href="" ng-click="logout()" ng-show="loggedIn">Logout</a>
+
+  <div ng-show="loggedIn">
+    <div class="primary-info text-center">
+      <div class="profile-picture-container">
+        <img class="profile-picture" src="{{res.img_url}}" alt="profile-picture">
+      </div>
+      <div class="user-name">{{res.name}}</div>
+    </div>
+    <div class="description text-center" ng-if="have_musics() || have_beverages()">
+      Likes
+      <span ng-if="have_musics()"> listen to {{user.favorite_music.join(" and ")}} music and </span>
+      <span ng-if="have_beverages()"> to drink {{user.favorite_beverage.join(" and ")}} </span>
+    </div>
+  </div>
+
+</div>

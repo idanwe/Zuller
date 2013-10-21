@@ -1,11 +1,30 @@
+.profile-container {
+  font-family: Helvetica, Verdana, sans-serif;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.primary-info {
+  margin-top: 5%;
+}
+
+.profile-picture-container {
+  /*margin-bottom: 2px;*/
+}
+
 .profile-picture {
-  position: absolute;
-  top: 12%;
-  left: 42%;
 }
 
 .user-name {
-  position: absolute;
-  top: 26%;
-  left: 37%;
+  font-size: 17px;
+}
+
+.fb-logout {
+  color: white;
+}
+
+.description {
+  font-size: 15px
 }
