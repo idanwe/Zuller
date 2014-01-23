@@ -7,15 +7,12 @@
     "jquery": "2.0.3",
     "es5-shim": "~2.0.8",
     "modernizr": "~2.6.2",
-    "hammerjs": "~1.0.5",
+    "jquery-hammerjs": "*",
     "angular-route": "~1.2.0-rc.2",
-    "angular-localstorage": "*"
+    "angular-local-storage": "*"
   },
   "devDependencies": {
     "angular-mocks": "~1.2.0-rc.2",
     "angular-scenario": "~1.2.0-rc.2"
-  },
-  "resolutions": {
-    "angular": "1.2.0-rc.2"
   }
 }
