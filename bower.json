@@ -10,9 +10,5 @@
     "jquery-hammerjs": "*",
     "angular-route": "~1.2.0-rc.2",
     "angular-local-storage": "*"
-  },
-  "devDependencies": {
-    "angular-mocks": "~1.2.0-rc.2",
-    "angular-scenario": "~1.2.0-rc.2"
   }
 }
